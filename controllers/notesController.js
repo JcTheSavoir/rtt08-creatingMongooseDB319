@@ -49,13 +49,13 @@ const updateNote =  async(req, res) => {  //UPDATE
         // ------------------------^(1)
     const {title, body} = req.body
         // ------------------------^(2)
-    const updatedNote = await Note.findbyIdAndUpdate(noteId, {
+    const note = await Note.findByIdAndUpdate(noteId, {
         title: title,
         body: body,
     });
-    res.json({updatedNote});
+    const updatedNote = await Note.findById(noteId);
+    res.json({ note: updatedNote });
         // ------------------------^(3)
-    
         // ------------------------^(4)
 }
 
@@ -65,13 +65,12 @@ const deleteNote = async(req, res) => { //DELETE
     // 3. Send Response
     const noteId = req.params.id
     // ------------------------^(1)
-    const deleteNote = await Note.deleteOne({
-        id: noteId,
-    })
+    const noteDelete = await Note.findByIdAndDelete(noteId)
     // ------------------------^(2)
-    res.json({ deleteNote })
+    res.json({success: "Record has been deleted successfully" })
     // ------------------------^(3)
 }
+
 
 module.exports = {
     fetchAllNotes,
