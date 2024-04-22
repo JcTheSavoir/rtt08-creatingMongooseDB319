@@ -19,20 +19,24 @@ connectToDb()
 
 // -----------------------------------------------------ROUTING
 
+app.get('/', (req, res) => {
+    res.send("This is a Landing Page")
+})
+
+
 //We want to establish CRUD routes for our Notes Model-->
 //---{IMPORTANT}, every MODEL needs it's own Routes that include CREATE, Read, Update and Delete---{IMPORTANT}
 
 
-app.get('/notes,', {  //READ
+app.get('/notes,', async ()=>{  //READ
     
 })
 //-------------------> GET all Notes
 
-app.get("/notes/:id", {  //READ
+app.get("/notes/:id", async ()=>{  //READ
     
 })
 // ----------------------> GET a Specific Note by ID
-
 // ------------------------------------------------READ
 
 app.post('/notes', {   //CREATE
