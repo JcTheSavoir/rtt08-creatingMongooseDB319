@@ -1,5 +1,6 @@
-//Models are a representation of our data.
-// Schema: we create a structure of properties associated with model
+// Schema: we create a blueprint for the model so we can export that 
+// format to our express server and eventually link it to your routes {CRUD operations}.
+
 const mongoose = require('mongoose');
 const noteSchema = new mongoose.Schema({
     title: String,
