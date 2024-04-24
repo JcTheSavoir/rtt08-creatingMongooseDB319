@@ -9,6 +9,6 @@ router.route('/')
 router.route('/:id')
     .get(notesController.fetchNote)
     .put(notesController.updateNote)
-    .delete(notesController.deleteNote);;
+    .delete(notesController.deleteNote);
 
 module.exports = router;
